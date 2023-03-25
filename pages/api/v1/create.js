@@ -2,6 +2,7 @@ import { getDB } from '../../../pg';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=3');
 
   const client = await getDB().connect();
 
