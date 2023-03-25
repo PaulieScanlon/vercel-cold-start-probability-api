@@ -5,8 +5,7 @@ export default async function handler(req, res) {
 
   const client = await getDB().connect();
 
-  const date = new Date();
-  const { runtime } = JSON.parse(req.body);
+  const { date, runtime } = JSON.parse(req.body);
 
   try {
     const response = await client.query('INSERT INTO results (date, runtime) VALUES($1, $2) RETURNING id', [
@@ -18,8 +17,6 @@ export default async function handler(req, res) {
       message: 'Create v1 - A-OK!',
       results: {
         id: response.rows[0].id,
-        date: date,
-        runtime: runtime,
       },
     });
   } catch (error) {
