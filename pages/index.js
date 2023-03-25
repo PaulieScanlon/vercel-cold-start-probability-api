@@ -55,14 +55,14 @@ const Page = () => {
       const uJson = await u.json();
       console.log('uJson', JSON.stringify(uJson, null, 2));
 
-      handleRead();
+      // handleRead();
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    handleRead();
+    // handleRead();
   }, []);
 
   return (
@@ -70,7 +70,7 @@ const Page = () => {
       <div>
         <button onClick={handleCreate}>create</button>
       </div>
-      <div>
+      {/* <div>
         <table>
           <thead>
             <tr>
@@ -114,7 +114,7 @@ const Page = () => {
             ) : null}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </main>
   );
 };
