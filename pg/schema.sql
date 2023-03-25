@@ -4,5 +4,6 @@ CREATE TABLE results (
   runtime     VARCHAR,
   start_time  DECIMAL,
   end_time    DECIMAL,
-  diff        DECIMAL
+  diff        DECIMAL,
+  error       BOOL
 );
