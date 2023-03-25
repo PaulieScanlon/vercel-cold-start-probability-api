@@ -1,0 +1,30 @@
+{
+  "name": "vercel-cold-start-probability-api",
+  "version": "1.0.0",
+  "description": "A Next.js site (API) for Cold Start Probability Tests",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulieScanlon/vercel-cold-start-probability-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulieScanlon/vercel-cold-start-probability-api/issues"
+  },
+  "homepage": "https://github.com/PaulieScanlon/vercel-cold-start-probability-api#readme",
+  "dependencies": {
+    "next": "^13.2.4",
+    "pg": "^8.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
