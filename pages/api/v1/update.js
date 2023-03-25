@@ -5,16 +5,13 @@ export default async function handler(req, res) {
 
   const client = await getDB().connect();
 
-  const { start_time, end_time, diff, error, id } = JSON.parse(req.body);
+  const { id, start_time, end_time, diff, error } = JSON.parse(req.body);
 
   try {
-    await client.query('UPDATE results SET start_time = $1, end_time = $2, diff = $3, error = $4 WHERE id = $5', [
-      start_time,
-      end_time,
-      diff,
-      error,
-      id,
-    ]);
+    await client.query(
+      'UPDATE results SET id = $1, start_time = $2, end_time = $3, diff = $4, error = $5 WHERE id = $1',
+      [id, start_time, end_time, diff, error]
+    );
 
     res.status(200).json({
       message: 'Update v1 - A-OK!',
